@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>View Project List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style1.css">
+        
+        <!--javascript for select all checkbox ripped from stackoverflow--> 
+        <script language="JavaScript">
+        function toggle(source) {
+            checkboxes = document.getElementsByName('foo');
+            for (var i=0, n=checkboxes.length; i<n; i++)
+                checkboxes[i].checked = source.checked;
+        }
+        </script>
+    
+    </head>
+    <body>
+        <form id="update" action="update.html" method="get" autocomplete="off">
+            <p><button type="submit">Submit</button></p>
+            <table border="1">
+                <thead>
+                    <td scope="col">Select All <input type="checkbox" onClick="toggle(this)"></td>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Project</th>
+                    <th scope="col">Supervisor</th>
+                    <th scope="col">Second Reader</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="foo" value="select_0"></td>
+                        <td>Sam Walsh</td>
+                        <td>Programming Project 2016</td>
+                        <td>Stefan Weber</td>
+                        <td>Mike Brady</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="foo" value="select_1"></td>
+                        <td>Conor Grogan</td>
+                        <td>Programming Project 2016</td>
+                        <td>Stefan Weber</td>
+                        <td>Mike Brady</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">Derp</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </body>
+</html>
