@@ -11,9 +11,9 @@ and open the template in the editor.
 body{
     color: #0000ff;
     background-color: #0fff00;
-    background-image: url("stefan.jpg");
+    /*background-image: url("stefan.jpg");
     background-position: center;
-    /*background-size: cover;*/
+    background-size: cover;*/
     font-family: arial, verdana, sans-serif;
 }
 
