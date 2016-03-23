@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :admin_log_ins
+  resources :admin_creations
+  resources :log_ins
   resources :users
   resources :static_pages
   # The priority is based upon order of creation: first created -> highest priority.

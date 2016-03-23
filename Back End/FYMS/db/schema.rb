@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321174204) do
+ActiveRecord::Schema.define(version: 20160321181712) do
 
   create_table "Projects", primary_key: "project_ID", force: :cascade do |t|
     t.string "project_name", limit: 50
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20160321174204) do
   create_table "Readers_Interests", id: false, force: :cascade do |t|
     t.string "reader_ID", limit: 10, null: false
     t.string "interest",  limit: 60, null: false
+  end
+
+  create_table "log_ins", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.string   "password",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "static_pages", force: :cascade do |t|
