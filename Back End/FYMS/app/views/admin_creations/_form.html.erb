@@ -1,0 +1,29 @@
+<%= form_for(@admin_creation) do |f| %>
+  <% if @admin_creation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_creation.errors.count, "error") %> prohibited this admin_creation from being saved:</h2>
+
+      <ul>
+      <% @admin_creation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

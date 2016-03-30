@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Creations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_creations.each do |admin_creation| %>
+      <tr>
+        <td><%= admin_creation.name %></td>
+        <td><%= admin_creation.email %></td>
+        <td><%= admin_creation.password %></td>
+        <td><%= link_to 'Show', admin_creation %></td>
+        <td><%= link_to 'Edit', edit_admin_creation_path(admin_creation) %></td>
+        <td><%= link_to 'Destroy', admin_creation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin creation', new_admin_creation_path %>

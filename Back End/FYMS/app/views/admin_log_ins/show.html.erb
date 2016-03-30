@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_log_in.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin_log_in.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @admin_log_in.password %>
+</p>
+
+<%= link_to 'Edit', edit_admin_log_in_path(@admin_log_in) %> |
+<%= link_to 'Back', admin_log_ins_path %>
