@@ -19,11 +19,13 @@ and open the template in the editor.
                 checkboxes[i].checked = source.checked;
         }
         </script>
-    
+
     </head>
     <body>
         <form id="update" action="update.html" method="get" autocomplete="off">		<!--placeholder page to link to-->
+            <img src="tcd.jpg" alt="Crest" width="640" height="100">
             <p><button type="submit">Submit</button></p>
+            
             <table border="1">
                 <thead>
                     <td scope="col">Select All <input type="checkbox" onClick="toggle(this)"></td>
@@ -48,11 +50,6 @@ and open the template in the editor.
                         <td>Mike Brady</td>
                     </tr>
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="5">This is a footer</td>
-                    </tr>
-                </tfoot>
             </table>
         </form>
     </body>
