@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Reader Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Staff id</th>
+      <th>Name</th>
+      <th>School</th>
+      <th>Office location</th>
+      <th>Email</th>
+      <th>Availability</th>
+      <th>Numberprojectssupervised</th>
+      <th>Secondreading</th>
+      <th>Thirdreading</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reader_entries.each do |reader_entry| %>
+      <tr>
+        <td><%= reader_entry.Staff_ID %></td>
+        <td><%= reader_entry.name %></td>
+        <td><%= reader_entry.school %></td>
+        <td><%= reader_entry.office_location %></td>
+        <td><%= reader_entry.email %></td>
+        <td><%= reader_entry.availability %></td>
+        <td><%= reader_entry.NumberProjectsSupervised %></td>
+        <td><%= reader_entry.secondReading %></td>
+        <td><%= reader_entry.thirdReading %></td>
+        <td><%= link_to 'Show', reader_entry %></td>
+        <td><%= link_to 'Edit', edit_reader_entry_path(reader_entry) %></td>
+        <td><%= link_to 'Destroy', reader_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reader entry', new_reader_entry_path %>

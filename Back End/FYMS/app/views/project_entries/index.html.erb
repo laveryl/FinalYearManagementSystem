@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag "tcd.jpg" %>
+
+<h1>Listing Project Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project id</th>
+      <th>Project name</th>
+      <th>Student no</th>
+      <th>Firstreader</th>
+      <th>Secondreader</th>
+      <th>Thirdreader</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project_entries.each do |project_entry| %>
+      <tr>
+        <td><%= project_entry.Project_ID %></td>
+        <td><%= project_entry.project_name %></td>
+        <td><%= project_entry.student_no %></td>
+        <td><%= project_entry.firstReader %></td>
+        <td><%= project_entry.secondReader %></td>
+        <td><%= project_entry.thirdReader %></td>
+        <td><%= link_to 'Show', project_entry %></td>
+        <td><%= link_to 'Edit', edit_project_entry_path(project_entry) %></td>
+        <td><%= link_to 'Destroy', project_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project entry', new_project_entry_path %>
