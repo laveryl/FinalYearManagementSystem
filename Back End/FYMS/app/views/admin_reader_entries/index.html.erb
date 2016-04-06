@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Reader Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Staff id</th>
+      <th>Name</th>
+      <th>School</th>
+      <th>Office location</th>
+      <th>Email</th>
+      <th>Availability</th>
+      <th>Numberprojectssupervised</th>
+      <th>2nd reading</th>
+      <th>3rd reading</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_reader_entries.each do |admin_reader_entry| %>
+      <tr>
+        <td><%= admin_reader_entry.Staff_ID %></td>
+        <td><%= admin_reader_entry.name %></td>
+        <td><%= admin_reader_entry.school %></td>
+        <td><%= admin_reader_entry.office_location %></td>
+        <td><%= admin_reader_entry.email %></td>
+        <td><%= admin_reader_entry.availability %></td>
+        <td><%= admin_reader_entry.NumberProjectsSupervised %></td>
+        <td><%= admin_reader_entry.2nd_reading %></td>
+        <td><%= admin_reader_entry.3rd_reading %></td>
+        <td><%= link_to 'Show', admin_reader_entry %></td>
+        <td><%= link_to 'Edit', edit_admin_reader_entry_path(admin_reader_entry) %></td>
+        <td><%= link_to 'Destroy', admin_reader_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin reader entry', new_admin_reader_entry_path %>

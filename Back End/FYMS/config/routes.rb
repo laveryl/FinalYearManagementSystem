@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admin_reader_entries
   resources :log_ins
   resources :log_ins
   resources :log_ins

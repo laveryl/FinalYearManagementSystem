@@ -1,0 +1,53 @@
+<%= form_for(@admin_reader_entry) do |f| %>
+  <% if @admin_reader_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_reader_entry.errors.count, "error") %> prohibited this admin_reader_entry from being saved:</h2>
+
+      <ul>
+      <% @admin_reader_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Staff_ID %><br>
+    <%= f.number_field :Staff_ID %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br>
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :office_location %><br>
+    <%= f.text_field :office_location %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :availability %><br>
+    <%= f.text_field :availability %>
+  </div>
+  <div class="field">
+    <%= f.label :NumberProjectsSupervised %><br>
+    <%= f.number_field :NumberProjectsSupervised %>
+  </div>
+  <div class="field">
+    <%= f.label :2nd_reading %><br>
+    <%= f.number_field :2nd_reading %>
+  </div>
+  <div class="field">
+    <%= f.label :3rd_reading %><br>
+    <%= f.number_field :3rd_reading %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
