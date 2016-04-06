@@ -8,8 +8,8 @@ class CreateAdminReaderEntries < ActiveRecord::Migration
       t.string :email
       t.string :availability
       t.integer :NumberProjectsSupervised
-      t.integer :2nd_reading
-      t.integer :3rd_reading
+      t.integer :second_reading
+      t.integer :third_reading
 
       t.timestamps null: false
     end

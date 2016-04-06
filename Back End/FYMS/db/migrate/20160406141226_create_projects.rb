@@ -6,6 +6,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :first_reader
       t.integer :second_reader
       t.integer :third_reader
+      
       t.timestamps null: false
     end
   end
