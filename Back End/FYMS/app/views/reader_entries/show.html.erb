@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Staff id:</strong>
+  <%= @reader_entry.Staff_ID %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reader_entry.name %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @reader_entry.school %>
+</p>
+
+<p>
+  <strong>Office location:</strong>
+  <%= @reader_entry.office_location %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @reader_entry.email %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @reader_entry.availability %>
+</p>
+
+<p>
+  <strong>Numberprojectssupervised:</strong>
+  <%= @reader_entry.NumberProjectsSupervised %>
+</p>
+
+<p>
+  <strong>Secondreading:</strong>
+  <%= @reader_entry.secondReading %>
+</p>
+
+<p>
+  <strong>Thirdreading:</strong>
+  <%= @reader_entry.thirdReading %>
+</p>
+
+<%= link_to 'Edit', edit_reader_entry_path(@reader_entry) %> |
+<%= link_to 'Back', reader_entries_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406145551) do
+ActiveRecord::Schema.define(version: 20160406165147) do
 
   create_table "admin_creations", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 20160406145551) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "project_entries", force: :cascade do |t|
+    t.integer  "Project_ID",   limit: 4
+    t.string   "project_name", limit: 255
+    t.integer  "student_no",   limit: 4
+    t.string   "firstReader",  limit: 255
+    t.string   "secondReader", limit: 255
+    t.string   "thirdReader",  limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.integer  "student_no",    limit: 4
@@ -58,6 +69,20 @@ ActiveRecord::Schema.define(version: 20160406145551) do
     t.integer  "third_reader",  limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "reader_entries", force: :cascade do |t|
+    t.integer  "Staff_ID",                 limit: 4
+    t.string   "name",                     limit: 255
+    t.string   "school",                   limit: 255
+    t.string   "office_location",          limit: 255
+    t.string   "email",                    limit: 255
+    t.string   "availability",             limit: 255
+    t.integer  "NumberProjectsSupervised", limit: 4
+    t.integer  "secondReading",            limit: 4
+    t.integer  "thirdReading",             limit: 4
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "readers", force: :cascade do |t|
