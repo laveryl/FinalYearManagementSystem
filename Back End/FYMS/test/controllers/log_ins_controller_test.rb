@@ -18,7 +18,7 @@ class LogInsControllerTest < ActionController::TestCase
 
   test "should create log_in" do
     assert_difference('LogIn.count') do
-      post :create, log_in: { email: @log_in.email, name: @log_in.name, password: @log_in.password }
+      post :create, log_in: { email: @log_in.email, password: @log_in.password }
     end
 
     assert_redirected_to log_in_path(assigns(:log_in))
@@ -35,7 +35,7 @@ class LogInsControllerTest < ActionController::TestCase
   end
 
   test "should update log_in" do
-    patch :update, id: @log_in, log_in: { email: @log_in.email, name: @log_in.name, password: @log_in.password }
+    patch :update, id: @log_in, log_in: { email: @log_in.email, password: @log_in.password }
     assert_redirected_to log_in_path(assigns(:log_in))
   end
 

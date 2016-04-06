@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Log Ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_ins.each do |log_in| %>
+      <tr>
+        <td><%= log_in.email %></td>
+        <td><%= log_in.password %></td>
+        <td><%= link_to 'Show', log_in %></td>
+        <td><%= link_to 'Edit', edit_log_in_path(log_in) %></td>
+        <td><%= link_to 'Destroy', log_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log in', new_log_in_path %>

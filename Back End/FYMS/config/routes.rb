@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :log_ins
+  resources :log_ins
+  resources :log_ins
+  resources :log_ins
   resources :admin_log_ins
   resources :admin_creations
   resources :log_ins
