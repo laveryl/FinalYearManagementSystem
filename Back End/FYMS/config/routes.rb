@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :project_entries
   resources :reader_entries
   resources :admin_reader_entries
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   resources :log_ins
   resources :users
   resources :static_pages
+  resources :projects
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
