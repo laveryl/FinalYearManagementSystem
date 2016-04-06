@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'projects/index'
+
+  get 'homepage/index'
+
   resources :admin_reader_entries
   resources :log_ins
   resources :log_ins
@@ -23,7 +27,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+	resources :projects
   # Example resource route with options:
   #   resources :products do
   #     member do
