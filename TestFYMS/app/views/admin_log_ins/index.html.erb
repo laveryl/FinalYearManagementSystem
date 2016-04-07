@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Log Ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_log_ins.each do |admin_log_in| %>
+      <tr>
+        <td><%= admin_log_in.name %></td>
+        <td><%= admin_log_in.email %></td>
+        <td><%= admin_log_in.password %></td>
+        <td><%= link_to 'Show', admin_log_in %></td>
+        <td><%= link_to 'Edit', edit_admin_log_in_path(admin_log_in) %></td>
+        <td><%= link_to 'Destroy', admin_log_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin log in', new_admin_log_in_path %>
+<%= link_to( "Log In", {
+      :controller => 'log_ins', 
+      :action => 'index'})%>

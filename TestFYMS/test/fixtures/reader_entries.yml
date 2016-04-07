@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Staff_ID: 1
+  name: MyString
+  school: MyString
+  office_location: MyString
+  email: MyString
+  availability: MyString
+  NumberProjectsSupervised: 1
+  secondReading: 1
+  thirdReading: 1
+
+two:
+  Staff_ID: 1
+  name: MyString
+  school: MyString
+  office_location: MyString
+  email: MyString
+  availability: MyString
+  NumberProjectsSupervised: 1
+  secondReading: 1
+  thirdReading: 1

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Project_ID: 1
+  project_name: MyString
+  student_no: 1
+  firstReader: MyString
+  secondReader: MyString
+  thirdReader: MyString
+
+two:
+  Project_ID: 1
+  project_name: MyString
+  student_no: 1
+  firstReader: MyString
+  secondReader: MyString
+  thirdReader: MyString
