@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :project_entries
   resources :reader_entries
   resources :admin_reader_entries
