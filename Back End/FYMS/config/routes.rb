@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   resources :project_entries
   resources :reader_entries
   resources :admin_reader_entries
