@@ -30,6 +30,8 @@
         <% if admin_signed_in?%>
         <td><%= link_to 'Edit', edit_project_entry_path(project_entry) %></td>
         <td><%= link_to 'Destroy', project_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to 'New Project entry  ', new_project_entry_path %>
+        <%= link_to 'Reader Entry', reader_entries_path %>
         <% end %>
       </tr>
     <% end %>
@@ -42,7 +44,9 @@
 <%= link_to 'Sign Up', new_admin_registration_path %>
 <%= link_to 'Sign In', new_admin_session_path %>
 <%= link_to('Sign Out', destroy_admin_session_path, :method => :delete) %>
-<%= link_to 'New Project entry', new_project_entry_path %>
+
+<br>
+
 
 
 
