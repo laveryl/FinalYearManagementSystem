@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
+<%= image_tag "tcd.jpg" %>
+<div class= "Sign_Form">
+  <h1>Log in</h1>
+    <%= form_tag() do %>
+    <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p> 
+    <p>Password:</br> <%= password_field_tag :login_password %></p> 
+    <% @log_in = password_field_tag :login_password%>
+    
+    <%= submit_tag("Log In") %>
+  <% end %>
+</div>
 
-<h1>Listing Log Ins</h1>
+<!-- <h1>Listing Log Ins</h1>
 
 <table>
   <thead>
@@ -14,6 +25,7 @@
   <tbody>
     <% @log_ins.each do |log_in| %>
       <tr>
+        
         <td><%= log_in.email %></td>
         <td><%= log_in.password %></td>
         <td><%= link_to 'Show', log_in %></td>
@@ -22,11 +34,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Log in', new_log_in_path %>
-<%= link_to 'Project entry', project_entries_path %>
-<%= link_to 'Reader entry', reader_entries_path %>
-
+</table> -->

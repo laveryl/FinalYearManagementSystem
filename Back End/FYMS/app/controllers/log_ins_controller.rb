@@ -1,6 +1,6 @@
 class LogInsController < ApplicationController
   before_action :set_log_in, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /log_ins
   # GET /log_ins.json
   def index

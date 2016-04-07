@@ -1,6 +1,6 @@
 class ProjectEntriesController < ApplicationController
   before_action :set_project_entry, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, except: [:index, :show]
   # GET /project_entries
   # GET /project_entries.json
   def index
@@ -14,7 +14,7 @@ class ProjectEntriesController < ApplicationController
 
   # GET /project_entries/new
   def new
-    @project_entry = ProjectEntry.new
+    @project_entry = current_admin.project_entries.build
   end
 
   # GET /project_entries/1/edit
@@ -24,7 +24,7 @@ class ProjectEntriesController < ApplicationController
   # POST /project_entries
   # POST /project_entries.json
   def create
-    @project_entry = ProjectEntry.new(project_entry_params)
+    @project_entry = current_admin.project_entries.build(project_entry_params)
 
     respond_to do |format|
       if @project_entry.save

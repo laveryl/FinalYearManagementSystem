@@ -27,15 +27,24 @@
         <td><%= project_entry.secondReader %></td>
         <td><%= project_entry.thirdReader %></td>
         <td><%= link_to 'Show', project_entry %></td>
+        <% if admin_signed_in?%>
         <td><%= link_to 'Edit', edit_project_entry_path(project_entry) %></td>
         <td><%= link_to 'Destroy', project_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
+<!-- <%= link_to( "Create New Log In", {
+       :controller => 'admin_log_ins', 
+      :action => 'new'})%>-->
+<%= link_to 'Sign Up', new_admin_registration_path %>
+<%= link_to 'Sign In', new_admin_session_path %>
+<%= link_to('Sign Out', destroy_admin_session_path, :method => :delete) %>
 <%= link_to 'New Project entry', new_project_entry_path %>
-<%= link_to 'Reader entry', reader_entries_path %>
-<%= link_to 'Manage Logins', log_ins_path %>
+
+
+
+
+

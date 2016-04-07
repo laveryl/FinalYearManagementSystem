@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
+  devise_for :admins
   resources :project_entries
   resources :reader_entries
   resources :admin_reader_entries
@@ -13,18 +12,18 @@ Rails.application.routes.draw do
   resources :log_ins
   resources :users
   resources :static_pages
-  resources :projects
-  # The priority is based upon order of creation: first created -> highest priority.
+    
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+    root 'project_entries#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  # get 'log_ins' => 'log_ins#new'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #  get 'admins/sign_out' => 'project_entries#index', as: :sign_out
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
