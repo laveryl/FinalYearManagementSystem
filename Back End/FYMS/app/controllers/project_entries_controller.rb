@@ -69,6 +69,6 @@ class ProjectEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_entry_params
-      params.require(:project_entry).permit(:Project_ID, :project_name, :student_no, :firstReader, :secondReader, :thirdReader)
+      params.require(:project_entry).permit(:Project_ID, :project_name, :student_no, :firstReader, :secondReader, :thirdReader, :subject)
     end
 end

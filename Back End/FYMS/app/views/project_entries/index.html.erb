@@ -13,6 +13,7 @@
       <th>Firstreader</th>
       <th>Secondreader</th>
       <th>Thirdreader</th>
+      <th>Subject</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= project_entry.firstReader %></td>
         <td><%= project_entry.secondReader %></td>
         <td><%= project_entry.thirdReader %></td>
+        <td><%= project_entry.subject %></td>
         <td><%= link_to 'Show', project_entry %></td>
         <% if admin_signed_in?%>
         <td><%= link_to 'Edit', edit_project_entry_path(project_entry), class: 'btn btn-default' %></td>
