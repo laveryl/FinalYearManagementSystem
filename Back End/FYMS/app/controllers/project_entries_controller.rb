@@ -25,6 +25,33 @@ class ProjectEntriesController < ApplicationController
   # POST /project_entries.json
   def create
     @project_entry = current_admin.project_entries.build(project_entry_params)
+    @readers = ReaderEntry.all
+    @candidates = Array.new(0);
+    
+    
+    for i in 0 .. readers.size
+       if readers[i].subject == project_entry.subject
+           candidates << reader[i];
+           end
+    end
+    
+    @lowestReader = candidates[0]
+    
+    for i in 0 .. candidates.size
+        if candidates[i].NumberProjectsSupervised < lowestReader.NumberProjectsSupervised
+            lowestReader = candidates[i]
+            end
+        end
+    project_entry.firstReader = lowestReader.Staff_ID
+    candidates.delete(lowestReader)
+    lowestReader = candidates[0]
+    for i in 0 .. candidates.size
+        if candidates[i].NumberProjectsSupervised < lowestReader.NumberProjectsSupervised
+            lowestReader = candidates[i]
+        end
+    end
+    project_entry.secondReader = lowestReader.Staff_ID
+
 
     respond_to do |format|
       if @project_entry.save
@@ -69,6 +96,6 @@ class ProjectEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_entry_params
-      params.require(:project_entry).permit(:Project_ID, :project_name, :student_no, :firstReader, :secondReader, :thirdReader, :subject)
+      params.require(:project_entry).permit(:Project_ID, :project_name, :student_no, :firstReader, :secondReader, :thirdReader)
     end
 end

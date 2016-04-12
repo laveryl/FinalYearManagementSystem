@@ -13,34 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160407143925) do
 
-  create_table "Projects", primary_key: "project_ID", force: :cascade do |t|
-    t.string "project_name", limit: 50
-    t.string "student_no",   limit: 10
-    t.string "1st_reader",   limit: 10
-    t.string "2nd_reader",   limit: 10
-    t.string "3rd_reader",   limit: 10
-  end
-
-  add_index "Projects", ["1st_reader"], name: "1st_reader", using: :btree
-  add_index "Projects", ["2nd_reader"], name: "2nd_reader", using: :btree
-  add_index "Projects", ["3rd_reader"], name: "3rd_reader", using: :btree
-
-  create_table "Readers", primary_key: "staff_ID", force: :cascade do |t|
-    t.string  "name",                limit: 80
-    t.string  "school",              limit: 50
-    t.string  "office_location",     limit: 80
-    t.string  "email",               limit: 60
-    t.integer "projects_supervised", limit: 4,  default: 0
-    t.integer "2nd_reading",         limit: 4,  default: 0
-    t.integer "3rd_reading",         limit: 4,  default: 0
-    t.string  "subject",             limit: 60,             null: false
-  end
-
-  create_table "Readers_Interests", id: false, force: :cascade do |t|
-    t.string "reader_ID", limit: 10, null: false
-    t.string "interest",  limit: 60, null: false
-  end
-
   create_table "admin_creations", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
@@ -117,7 +89,6 @@ ActiveRecord::Schema.define(version: 20160407143925) do
     t.integer  "third_reader",  limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "subject",       limit: 60
   end
 
   create_table "reader_entries", force: :cascade do |t|
@@ -161,14 +132,12 @@ ActiveRecord::Schema.define(version: 20160407143925) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",               limit: 255
+    t.string   "email",              limit: 255
+    t.string   "encrypted_password", limit: 255
+    t.string   "salt",               limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
-  add_foreign_key "Projects", "Readers", column: "1st_reader", primary_key: "staff_ID", name: "Projects_ibfk_1", on_delete: :nullify
-  add_foreign_key "Projects", "Readers", column: "2nd_reader", primary_key: "staff_ID", name: "Projects_ibfk_2", on_delete: :nullify
-  add_foreign_key "Projects", "Readers", column: "3rd_reader", primary_key: "staff_ID", name: "Projects_ibfk_3", on_delete: :nullify
-  add_foreign_key "Readers_Interests", "Readers", column: "reader_ID", primary_key: "staff_ID", name: "Readers_Interests_ibfk_1", on_delete: :cascade
 end

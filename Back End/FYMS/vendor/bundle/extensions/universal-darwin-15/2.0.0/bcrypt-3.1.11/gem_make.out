@@ -1,0 +1,20 @@
+current directory: /Users/loughlinlavery/Desktop/FinalYearManagementSystem/Back End/FYMS/vendor/bundle/gems/bcrypt-3.1.11/ext/mri
+/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby -r ./siteconf20160407-22002-bkw7nv.rb extconf.rb
+creating Makefile
+
+current directory: /Users/loughlinlavery/Desktop/FinalYearManagementSystem/Back End/FYMS/vendor/bundle/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/loughlinlavery/Desktop/FinalYearManagementSystem/Back End/FYMS/vendor/bundle/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+
+current directory: /Users/loughlinlavery/Desktop/FinalYearManagementSystem/Back End/FYMS/vendor/bundle/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20160407-22002-1eb6k9o
+installing default bcrypt_ext libraries
