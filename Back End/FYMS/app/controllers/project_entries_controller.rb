@@ -27,30 +27,33 @@ class ProjectEntriesController < ApplicationController
     @project_entry = current_admin.project_entries.build(project_entry_params)
     @readers = ReaderEntry.all
     @candidates = Array.new(0);
-    
+    @randomNumber = rand(0..@readers.size-1)
     
     for i in 0 .. @readers.size
-        #if readers[i].subject == project_entry.subject  //Dont have a subject column so thats why this doesnt work
-           @candidates << @readers[i];
-           #end
-    end
+        # if readers[i].subject == project_entry.subject  //Dont have a subject column so thats why this doesnt work
+             @candidates << @readers[i];
+             #  end
+        end
     
-    @lowestReader = @candidates[0]
+    @lowestReader = @candidates[@randomNumber]
     
     #for i in 0 .. @candidates.size
     #if @candidates[i].NumberProjectsSupervised < @lowestReader.NumberProjectsSupervised
     # @lowestReader = @candidates[i]
            #       end
            #  end
-    @project_entry.firstReader = @lowestReader.Staff_ID
+    @project_entry.firstReader = @lowestReader.name
+    @lowestReader.NumberProjectsSupervised = @lowestReader.NumberProjectsSupervised + 1
     @candidates.delete(@lowestReader)
-    @lowestReader = @candidates[0]
-    #for i in 0 .. candidates.size
-    #   if candidates[i].NumberProjectsSupervised < lowestReader.NumberProjectsSupervised
-    #       lowestReader = candidates[i]
-    #   end
+    @randomNumber = rand(0..@candidates.size-2)
+    @lowestReader = @candidates[@randomNumber]
+    #for i in 0 .. @candidates.size
+    #  if @candidates[i].NumberProjectsSupervised < @lowestReader.NumberProjectsSupervised
+    #      @lowestReader = @candidates[i]
+    #  end
     #end
-    @project_entry.secondReader = @lowestReader.Staff_ID
+    @project_entry.secondReader = @lowestReader.name
+    @project_entry.thirdReader = ""
 
 
     respond_to do |format|
