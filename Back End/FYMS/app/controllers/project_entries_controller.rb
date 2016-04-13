@@ -29,28 +29,28 @@ class ProjectEntriesController < ApplicationController
     @candidates = Array.new(0);
     
     
-    for i in 0 .. readers.size
-       if readers[i].subject == project_entry.subject
-           candidates << reader[i];
-           end
+    for i in 0 .. @readers.size
+        #if readers[i].subject == project_entry.subject  //Dont have a subject column so thats why this doesnt work
+           @candidates << @readers[i];
+           #end
     end
     
-    @lowestReader = candidates[0]
+    @lowestReader = @candidates[0]
     
-    for i in 0 .. candidates.size
-        if candidates[i].NumberProjectsSupervised < lowestReader.NumberProjectsSupervised
-            lowestReader = candidates[i]
-            end
-        end
-    project_entry.firstReader = lowestReader.Staff_ID
-    candidates.delete(lowestReader)
-    lowestReader = candidates[0]
-    for i in 0 .. candidates.size
-        if candidates[i].NumberProjectsSupervised < lowestReader.NumberProjectsSupervised
-            lowestReader = candidates[i]
-        end
-    end
-    project_entry.secondReader = lowestReader.Staff_ID
+    #for i in 0 .. @candidates.size
+    #if @candidates[i].NumberProjectsSupervised < @lowestReader.NumberProjectsSupervised
+    # @lowestReader = @candidates[i]
+           #       end
+           #  end
+    @project_entry.firstReader = @lowestReader.Staff_ID
+    @candidates.delete(@lowestReader)
+    @lowestReader = @candidates[0]
+    #for i in 0 .. candidates.size
+    #   if candidates[i].NumberProjectsSupervised < lowestReader.NumberProjectsSupervised
+    #       lowestReader = candidates[i]
+    #   end
+    #end
+    @project_entry.secondReader = @lowestReader.Staff_ID
 
 
     respond_to do |format|

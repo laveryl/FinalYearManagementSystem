@@ -69,6 +69,6 @@ class ReaderEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reader_entry_params
-      params.require(:reader_entry).permit(:Staff_ID, :name, :school, :office_location, :email, :availability, :NumberProjectsSupervised, :secondReading, :thirdReading,:subject)
+      params.require(:reader_entry).permit(:Staff_ID, :name, :school, :office_location, :email, :availability, :NumberProjectsSupervised, :secondReading, :thirdReading)
     end
 end

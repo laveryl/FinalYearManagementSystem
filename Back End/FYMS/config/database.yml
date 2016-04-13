@@ -16,7 +16,7 @@ FYMS:
   username: root
   password:
   socket: /tmp/mysql.sock
-  
+
 development:
   database: FYMS
   adapter: mysql2
